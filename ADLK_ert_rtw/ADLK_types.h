@@ -3,9 +3,9 @@
  *
  * Code generated for Simulink model 'ADLK'.
  *
- * Model version                  : 1.25
+ * Model version                  : 1.27
  * Simulink Coder version         : 9.7 (R2022a) 13-Nov-2021
- * C/C++ source code generated on : Tue Oct 24 11:14:34 2023
+ * C/C++ source code generated on : Tue Oct 24 13:18:46 2023
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: Intel->x86-64 (Windows64)
