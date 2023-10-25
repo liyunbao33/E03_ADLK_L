@@ -7,7 +7,7 @@
 %endfunction
 %function ChartDataMap(block, system) void
   %createrecord ChartDataElements {\
-    NumChartData   21 \
+    NumChartData   23 \
     ChartDataDefaults {\
       RecordType   "ChartData"\
       Dimensions   []\
@@ -130,6 +130,20 @@
       Description  "ChangeDetectionDoubleBuffer"\
       SFName       ""\
       Path         "SI_b_DoorLockFlg"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "SO_b_DoorRlsReq_prev"\
+      Description  "ChangeDetectionDoubleBuffer"\
+      SFName       ""\
+      Path         "SO_b_DoorRlsReq"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "SO_b_DoorRlsReq_start"\
+      Description  "ChangeDetectionDoubleBuffer"\
+      SFName       ""\
+      Path         "SO_b_DoorRlsReq"\
       SrcLocation  ""\
     }\
     ChartData {\
