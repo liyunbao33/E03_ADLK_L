@@ -3,9 +3,9 @@
  *
  * Code generated for Simulink model 'ADLK'.
  *
- * Model version                  : 1.27
+ * Model version                  : 1.28
  * Simulink Coder version         : 9.7 (R2022a) 13-Nov-2021
- * C/C++ source code generated on : Wed Oct 25 11:40:47 2023
+ * C/C++ source code generated on : Thu Oct 26 09:26:53 2023
  *
  * Target selection: autosar.tlc
  * Embedded hardware selection: Intel->x86-64 (Windows64)
@@ -44,7 +44,7 @@ B_ADLK_T ADLK_B;
 DW_ADLK_T ADLK_DW;
 
 /* Forward declaration for local functions */
-static float64 ADLK_GetPwm(float64 x, uint8 rtu_SI_e_Volt100mV);
+static uint8 ADLK_GetPwm(uint8 x, uint8 rtu_SI_e_Volt100mV);
 static void ADLK_Rls(uint8 rtu_SI_e_Volt100mV, Boolean rtu_SI_b_DoorAjar,
                      Boolean rtu_SI_b_DoorOpen, uint8 rtu_SI_e_DoorRlsDelayTime,
                      uint8 *rty_SO_e_MotorCmd, uint8 *rty_SO_e_MotStateMachine,
@@ -52,14 +52,27 @@ static void ADLK_Rls(uint8 rtu_SI_e_Volt100mV, Boolean rtu_SI_b_DoorAjar,
                      DW_FLADLKDriver_ADLK_T *localDW);
 
 /* Function for Chart: '<S3>/FLADLKDriver' */
-static float64 ADLK_GetPwm(float64 x, uint8 rtu_SI_e_Volt100mV)
+static uint8 ADLK_GetPwm(uint8 x, uint8 rtu_SI_e_Volt100mV)
 {
-  float64 y;
-  y = x * 100.0 / (float64)rtu_SI_e_Volt100mV;
+  sint32 tmp;
+  uint8 y;
+  if (rtu_SI_e_Volt100mV == 0) {
+    tmp = MAX_int32_T;
+
+    /* Divide by zero handler */
+  } else {
+    tmp = x * 100 / rtu_SI_e_Volt100mV;
+  }
+
+  if (tmp > 255) {
+    tmp = 255;
+  }
+
+  y = (uint8)tmp;
 
   /*  扩大100倍，浮点转整型  */
-  if ((y > 100.0) || (rtu_SI_e_Volt100mV == 0)) {
-    y = 100.0;
+  if (((uint8)tmp > 100) || (rtu_SI_e_Volt100mV == 0)) {
+    y = 100U;
   }
 
   return y;
@@ -101,36 +114,25 @@ static void ADLK_Rls(uint8 rtu_SI_e_Volt100mV, Boolean rtu_SI_b_DoorAjar,
               localDW->SL_b_MotorMutexFlg = false;
               *rty_SO_e_MotStateMachine = 2U;
             } else {
-              Boolean tmp_0;
-              boolean tmp_1;
-              tmp_0 = !rtu_SI_b_DoorAjar;
-              tmp_1 = !localDW->SL_b_MotorMutexFlg;
-              if ((localDW->temporalCounter_i2 >= 5) && tmp_0 &&
-                  (localDW->SL_e_CycleCount < 3) && tmp_1) {
+              Boolean tmp;
+              boolean tmp_0;
+              tmp = !rtu_SI_b_DoorAjar;
+              tmp_0 = !localDW->SL_b_MotorMutexFlg;
+              if ((localDW->temporalCounter_i2 >= 5) && tmp &&
+                  (localDW->SL_e_CycleCount < 3) && tmp_0) {
                 localDW->is_Release = ADLK_IN_Stall_Handle;
                 localDW->temporalCounter_i2 = 0U;
                 *rty_SO_e_MotorCmd = 1U;
                 *rty_SO_e_MotorPwm = 100U;
                 localDW->SL_e_CycleCount++;
                 localDW->SL_b_MotorMutexFlg = true;
-              } else if ((localDW->temporalCounter_i2 >= 5) && tmp_0 &&
-                         (localDW->SL_e_CycleCount >= 3) && tmp_1) {
-                float64 tmp;
+              } else if ((localDW->temporalCounter_i2 >= 5) && tmp &&
+                         (localDW->SL_e_CycleCount >= 3) && tmp_0) {
                 *rty_SO_b_Error = true;
                 localDW->is_Release = ADLK_IN_Reset;
                 localDW->temporalCounter_i2 = 0U;
                 *rty_SO_e_MotorCmd = 2U;
-                tmp = ADLK_GetPwm(70.0, rtu_SI_e_Volt100mV);
-                if (tmp < 256.0) {
-                  if (tmp >= 0.0) {
-                    *rty_SO_e_MotorPwm = (uint8)tmp;
-                  } else {
-                    *rty_SO_e_MotorPwm = 0U;
-                  }
-                } else {
-                  *rty_SO_e_MotorPwm = MAX_uint8_T;
-                }
-
+                *rty_SO_e_MotorPwm = ADLK_GetPwm(70, rtu_SI_e_Volt100mV);
                 localDW->SL_b_MotorMutexFlg = true;
                 *rty_SO_e_MotStateMachine = 3U;
               }
@@ -139,26 +141,13 @@ static void ADLK_Rls(uint8 rtu_SI_e_Volt100mV, Boolean rtu_SI_b_DoorAjar,
           break;
 
          case ADLK_IN_Delay:
-          {
-            if ((localDW->temporalCounter_i2 >= localDW->SL_e_DoorRlsDelayTime) &&
-                (!localDW->SL_b_MotorMutexFlg)) {
-              float64 tmp;
-              localDW->is_Release = ADLK_IN_Step1_Ajar;
-              localDW->temporalCounter_i2 = 0U;
-              *rty_SO_e_MotorCmd = 1U;
-              tmp = ADLK_GetPwm(105.0, rtu_SI_e_Volt100mV);
-              if (tmp < 256.0) {
-                if (tmp >= 0.0) {
-                  *rty_SO_e_MotorPwm = (uint8)tmp;
-                } else {
-                  *rty_SO_e_MotorPwm = 0U;
-                }
-              } else {
-                *rty_SO_e_MotorPwm = MAX_uint8_T;
-              }
-
-              localDW->SL_b_MotorMutexFlg = true;
-            }
+          if ((localDW->temporalCounter_i2 >= localDW->SL_e_DoorRlsDelayTime) &&
+              (!localDW->SL_b_MotorMutexFlg)) {
+            localDW->is_Release = ADLK_IN_Step1_Ajar;
+            localDW->temporalCounter_i2 = 0U;
+            *rty_SO_e_MotorCmd = 1U;
+            *rty_SO_e_MotorPwm = ADLK_GetPwm(105, rtu_SI_e_Volt100mV);
+            localDW->SL_b_MotorMutexFlg = true;
           }
           break;
 
@@ -194,54 +183,29 @@ static void ADLK_Rls(uint8 rtu_SI_e_Volt100mV, Boolean rtu_SI_b_DoorAjar,
           break;
 
          default:
-          {
-            /* case IN_Step2_Open: */
-            if (localDW->is_Step2_Open == ADLK_IN_Idle) {
-              if ((localDW->temporalCounter_i2 < 270) && rtu_SI_b_DoorOpen) {
-                float64 tmp;
-                *rty_SO_b_Error = false;
-                localDW->is_Step2_Open = ADLK_IN_NO_ACTIVE_CHILD;
-                localDW->is_Release = ADLK_IN_Reset;
-                localDW->temporalCounter_i2 = 0U;
-                *rty_SO_e_MotorCmd = 2U;
-                tmp = ADLK_GetPwm(70.0, rtu_SI_e_Volt100mV);
-                if (tmp < 256.0) {
-                  if (tmp >= 0.0) {
-                    *rty_SO_e_MotorPwm = (uint8)tmp;
-                  } else {
-                    *rty_SO_e_MotorPwm = 0U;
-                  }
-                } else {
-                  *rty_SO_e_MotorPwm = MAX_uint8_T;
-                }
-
-                localDW->SL_b_MotorMutexFlg = true;
-                *rty_SO_e_MotStateMachine = 3U;
-              } else if (localDW->temporalCounter_i2 >= 300) {
-                localDW->is_Step2_Open = ADLK_IN_LastCheck;
-              }
-            } else {
-              float64 tmp;
-
-              /* case IN_LastCheck: */
+          /* case IN_Step2_Open: */
+          if (localDW->is_Step2_Open == ADLK_IN_Idle) {
+            if ((localDW->temporalCounter_i2 < 270) && rtu_SI_b_DoorOpen) {
+              *rty_SO_b_Error = false;
               localDW->is_Step2_Open = ADLK_IN_NO_ACTIVE_CHILD;
               localDW->is_Release = ADLK_IN_Reset;
               localDW->temporalCounter_i2 = 0U;
               *rty_SO_e_MotorCmd = 2U;
-              tmp = ADLK_GetPwm(70.0, rtu_SI_e_Volt100mV);
-              if (tmp < 256.0) {
-                if (tmp >= 0.0) {
-                  *rty_SO_e_MotorPwm = (uint8)tmp;
-                } else {
-                  *rty_SO_e_MotorPwm = 0U;
-                }
-              } else {
-                *rty_SO_e_MotorPwm = MAX_uint8_T;
-              }
-
+              *rty_SO_e_MotorPwm = ADLK_GetPwm(70, rtu_SI_e_Volt100mV);
               localDW->SL_b_MotorMutexFlg = true;
               *rty_SO_e_MotStateMachine = 3U;
+            } else if (localDW->temporalCounter_i2 >= 300) {
+              localDW->is_Step2_Open = ADLK_IN_LastCheck;
             }
+          } else {
+            /* case IN_LastCheck: */
+            localDW->is_Step2_Open = ADLK_IN_NO_ACTIVE_CHILD;
+            localDW->is_Release = ADLK_IN_Reset;
+            localDW->temporalCounter_i2 = 0U;
+            *rty_SO_e_MotorCmd = 2U;
+            *rty_SO_e_MotorPwm = ADLK_GetPwm(70, rtu_SI_e_Volt100mV);
+            localDW->SL_b_MotorMutexFlg = true;
+            *rty_SO_e_MotStateMachine = 3U;
           }
           break;
         }
@@ -263,29 +227,16 @@ static void ADLK_Rls(uint8 rtu_SI_e_Volt100mV, Boolean rtu_SI_b_DoorAjar,
     break;
 
    default:
-    {
-      /* case IN_Wait: */
-      if (!localDW->SL_b_MotorMutexFlg) {
-        float64 tmp;
-        localDW->is_Rls = ADLK_IN_PowerOn;
-        localDW->temporalCounter_i2 = 0U;
+    /* case IN_Wait: */
+    if (!localDW->SL_b_MotorMutexFlg) {
+      localDW->is_Rls = ADLK_IN_PowerOn;
+      localDW->temporalCounter_i2 = 0U;
 
-        /*  上电释放电机执行一次复位  */
-        *rty_SO_e_MotorCmd = 2U;
-        tmp = ADLK_GetPwm(70.0, rtu_SI_e_Volt100mV);
-        if (tmp < 256.0) {
-          if (tmp >= 0.0) {
-            *rty_SO_e_MotorPwm = (uint8)tmp;
-          } else {
-            *rty_SO_e_MotorPwm = 0U;
-          }
-        } else {
-          *rty_SO_e_MotorPwm = MAX_uint8_T;
-        }
-
-        localDW->SL_b_MotorMutexFlg = true;
-        *rty_SO_e_MotStateMachine = 3U;
-      }
+      /*  上电释放电机执行一次复位  */
+      *rty_SO_e_MotorCmd = 2U;
+      *rty_SO_e_MotorPwm = ADLK_GetPwm(70, rtu_SI_e_Volt100mV);
+      localDW->SL_b_MotorMutexFlg = true;
+      *rty_SO_e_MotStateMachine = 3U;
     }
     break;
   }
