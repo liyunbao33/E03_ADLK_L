@@ -3,9 +3,9 @@
  *
  * Code generated for Simulink model 'ADLK'.
  *
- * Model version                  : 1.28
+ * Model version                  : 1.7
  * Simulink Coder version         : 9.7 (R2022a) 13-Nov-2021
- * C/C++ source code generated on : Thu Oct 26 09:26:53 2023
+ * C/C++ source code generated on : Thu Oct 26 17:40:26 2023
  *
  * Target selection: autosar.tlc
  * Embedded hardware selection: Intel->x86-64 (Windows64)
@@ -28,39 +28,39 @@
 typedef struct {
   uint16 temporalCounter_i2;           /* '<S3>/FLADLKDriver' */
   uint8 is_active_c19_ADLKDriver;      /* '<S3>/FLADLKDriver' */
-  uint8 is_DLK;                        /* '<S3>/FLADLKDriver' */
+  uint8 is_CLK;                        /* '<S3>/FLADLKDriver' */
   uint8 is_Rls;                        /* '<S3>/FLADLKDriver' */
   uint8 is_MainProgress;               /* '<S3>/FLADLKDriver' */
   uint8 is_Release;                    /* '<S3>/FLADLKDriver' */
   uint8 is_Step2_Open;                 /* '<S3>/FLADLKDriver' */
-  uint8 is_CLK;                        /* '<S3>/FLADLKDriver' */
+  uint8 is_DLK;                        /* '<S3>/FLADLKDriver' */
   uint8 SL_e_CycleCount;               /* '<S3>/FLADLKDriver' */
   uint8 SL_e_DoorRlsDelayTime;         /* '<S3>/FLADLKDriver' */
   uint8 temporalCounter_i1;            /* '<S3>/FLADLKDriver' */
   uint8 temporalCounter_i3;            /* '<S3>/FLADLKDriver' */
   boolean SL_b_MotorMutexFlg;          /* '<S3>/FLADLKDriver' */
-  boolean SI_b_DoorUnlockFlg_prev;     /* '<S3>/FLADLKDriver' */
-  boolean SI_b_DoorUnlockFlg_start;    /* '<S3>/FLADLKDriver' */
-  boolean SI_b_DoorLockFlg_prev;       /* '<S3>/FLADLKDriver' */
-  boolean SI_b_DoorLockFlg_start;      /* '<S3>/FLADLKDriver' */
-  boolean SO_b_DoorRlsReq_prev;        /* '<S3>/FLADLKDriver' */
-  boolean SO_b_DoorRlsReq_start;       /* '<S3>/FLADLKDriver' */
   boolean SI_b_ClkUnlockFlg_prev;      /* '<S3>/FLADLKDriver' */
   boolean SI_b_ClkUnlockFlg_start;     /* '<S3>/FLADLKDriver' */
   boolean SI_b_ClkLockFlg_prev;        /* '<S3>/FLADLKDriver' */
   boolean SI_b_ClkLockFlg_start;       /* '<S3>/FLADLKDriver' */
+  boolean SO_b_DoorRlsReq_prev;        /* '<S3>/FLADLKDriver' */
+  boolean SO_b_DoorRlsReq_start;       /* '<S3>/FLADLKDriver' */
+  boolean SI_b_DoorUnlockFlg_prev;     /* '<S3>/FLADLKDriver' */
+  boolean SI_b_DoorUnlockFlg_start;    /* '<S3>/FLADLKDriver' */
+  boolean SI_b_DoorLockFlg_prev;       /* '<S3>/FLADLKDriver' */
+  boolean SI_b_DoorLockFlg_start;      /* '<S3>/FLADLKDriver' */
 } DW_FLADLKDriver_ADLK_T;
 
 /* Block signals (default storage) */
 typedef struct tag_B_ADLK_T {
   uint8 SO_e_MotorCmd;                 /* '<S3>/RLADLKDriver' */
   uint8 SO_e_MotStateMachine;          /* '<S3>/RLADLKDriver' */
-  uint8 SO_e_MotorCmd_k;               /* '<S3>/FLADLKDriver' */
-  uint8 SO_e_MotStateMachine_h;        /* '<S3>/FLADLKDriver' */
-  boolean SO_b_DoorUnlockCmd;          /* '<S3>/RLADLKDriver' */
-  boolean SO_b_DoorLockCmd;            /* '<S3>/RLADLKDriver' */
-  boolean SO_b_DoorUnlockCmd_h;        /* '<S3>/FLADLKDriver' */
-  boolean SO_b_DoorLockCmd_i;          /* '<S3>/FLADLKDriver' */
+  uint8 SO_e_MotorPwm;                 /* '<S3>/RLADLKDriver' */
+  uint8 SO_e_DoorLockCmd;              /* '<S3>/RLADLKDriver' */
+  uint8 SO_e_MotorCmd_p;               /* '<S3>/FLADLKDriver' */
+  uint8 SO_e_MotStateMachine_c;        /* '<S3>/FLADLKDriver' */
+  uint8 SO_e_MotorPwm_b;               /* '<S3>/FLADLKDriver' */
+  uint8 SO_e_DoorLockCmd_f;            /* '<S3>/FLADLKDriver' */
 } B_ADLK_T;
 
 /* Block states (default storage) for system '<Root>' */
@@ -94,13 +94,9 @@ extern DW_ADLK_T ADLK_DW;
  * '<S1>'   : 'ADLK/ADLK_Init'
  * '<S2>'   : 'ADLK/ADLK_Step_sys'
  * '<S3>'   : 'ADLK/ADLK_Step_sys/REL'
- * '<S4>'   : 'ADLK/ADLK_Step_sys/REL/Compare To Constant'
- * '<S5>'   : 'ADLK/ADLK_Step_sys/REL/Compare To Constant1'
- * '<S6>'   : 'ADLK/ADLK_Step_sys/REL/Compare To Constant2'
- * '<S7>'   : 'ADLK/ADLK_Step_sys/REL/Compare To Constant3'
- * '<S8>'   : 'ADLK/ADLK_Step_sys/REL/FLADLKDriver'
- * '<S9>'   : 'ADLK/ADLK_Step_sys/REL/RLADLKDriver'
- * '<S10>'  : 'ADLK/ADLK_Step_sys/REL/Recycle Bin'
+ * '<S4>'   : 'ADLK/ADLK_Step_sys/REL/FLADLKDriver'
+ * '<S5>'   : 'ADLK/ADLK_Step_sys/REL/RLADLKDriver'
+ * '<S6>'   : 'ADLK/ADLK_Step_sys/REL/Recycle Bin'
  */
 #endif                                 /* RTW_HEADER_ADLK_h_ */
 
