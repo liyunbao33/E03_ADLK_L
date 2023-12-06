@@ -2,7 +2,7 @@
 ## Makefile generated for component 'ADLK'. 
 ## 
 ## Makefile     : ADLK.mk
-## Generated on : Thu Oct 26 21:54:36 2023
+## Generated on : Wed Dec 06 17:54:42 2023
 ## Final product: $(RELATIVE_PATH_TO_ANCHOR)/ADLK.exe
 ## Product type : executable
 ## 
@@ -19,10 +19,10 @@
 
 PRODUCT_NAME              = ADLK
 MAKEFILE                  = ADLK.mk
-MATLAB_ROOT               = D:/APP/MATLAB~1
-MATLAB_BIN                = D:/APP/MATLAB~1/bin
+MATLAB_ROOT               = D:/APP/matlab
+MATLAB_BIN                = D:/APP/matlab/bin
 MATLAB_ARCH_BIN           = $(MATLAB_BIN)/win64
-START_DIR                 = D:/temp/E03_ADLK_L
+START_DIR                 = C:/Users/DELL/Desktop/E03_ADLK_L_PACK/E03_ADLK_L
 SOLVER                    = 
 SOLVER_OBJ                = 
 CLASSIC_INTERFACE         = 0

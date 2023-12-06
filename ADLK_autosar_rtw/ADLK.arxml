@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 Auto generated XML Component Description for model ADLK
-Model version                : 1.7
+Model version                : 1.15
 Simulink Coder version       : Simulink Coder 9.7 (R2022a) 13-Nov-2021
-XML source code generated on : Thu Oct 26 21:54:34 2023
-Model Checksum               : 2887582198 88992831 3819282842 907949154
+XML source code generated on : Wed Dec 06 17:54:41 2023
+Model Checksum               : 3676686462 4099830472 3590930422 4129443866
 -->
 <AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_4-3-1.xsd">
     <AR-PACKAGES>
@@ -493,7 +493,7 @@ Model Checksum               : 2887582198 88992831 3819282842 907949154
                                     <MINIMUM-START-INTERVAL>0</MINIMUM-START-INTERVAL>
                                     <CAN-BE-INVOKED-CONCURRENTLY>false</CAN-BE-INVOKED-CONCURRENTLY>
                                     <DATA-SEND-POINTS>
-                                        <VARIABLE-ACCESS UUID="0cd04864-b988-57d6-0684-a47c782ff5ea">
+                                        <VARIABLE-ACCESS UUID="4a14f2e2-9cfb-57b7-c032-419812690236">
                                             <SHORT-NAME>OUT_VeOUT_ADLK_FLLockReq_sig_VeOUT_ADLK_FLLockReq_sig</SHORT-NAME>
                                             <ACCESSED-VARIABLE>
                                                 <AUTOSAR-VARIABLE-IREF>
@@ -502,7 +502,7 @@ Model Checksum               : 2887582198 88992831 3819282842 907949154
                                                 </AUTOSAR-VARIABLE-IREF>
                                             </ACCESSED-VARIABLE>
                                         </VARIABLE-ACCESS>
-                                        <VARIABLE-ACCESS UUID="f75c9b8e-e210-5400-91c2-6539c0df4d5b">
+                                        <VARIABLE-ACCESS UUID="5168fb4e-2bef-59a5-8e50-32ef1ab8b8d8">
                                             <SHORT-NAME>OUT_VeOUT_ADLK_RLLockReq_sig_VeOUT_ADLK_RLLockReq_sig</SHORT-NAME>
                                             <ACCESSED-VARIABLE>
                                                 <AUTOSAR-VARIABLE-IREF>
@@ -511,7 +511,7 @@ Model Checksum               : 2887582198 88992831 3819282842 907949154
                                                 </AUTOSAR-VARIABLE-IREF>
                                             </ACCESSED-VARIABLE>
                                         </VARIABLE-ACCESS>
-                                        <VARIABLE-ACCESS UUID="b30aff83-8cac-5de2-9e4b-1322bfe9d388">
+                                        <VARIABLE-ACCESS UUID="427b84f6-0a58-56e8-2d0e-2ee00056d682">
                                             <SHORT-NAME>OUT_VeOUT_ADLK_FLReleaseLatchStatus_sig_VeOUT_ADLK_FLReleaseLatchStatus_sig</SHORT-NAME>
                                             <ACCESSED-VARIABLE>
                                                 <AUTOSAR-VARIABLE-IREF>
@@ -520,7 +520,7 @@ Model Checksum               : 2887582198 88992831 3819282842 907949154
                                                 </AUTOSAR-VARIABLE-IREF>
                                             </ACCESSED-VARIABLE>
                                         </VARIABLE-ACCESS>
-                                        <VARIABLE-ACCESS UUID="73ed513b-0b63-5d22-7914-091f90f870ff">
+                                        <VARIABLE-ACCESS UUID="b9e0793d-4714-580b-d795-e25e5cf2709b">
                                             <SHORT-NAME>OUT_VeOUT_ADLK_RLReleaseLatchStatus_sig_VeOUT_ADLK_RLReleaseLatchStatus_sig</SHORT-NAME>
                                             <ACCESSED-VARIABLE>
                                                 <AUTOSAR-VARIABLE-IREF>
@@ -529,7 +529,7 @@ Model Checksum               : 2887582198 88992831 3819282842 907949154
                                                 </AUTOSAR-VARIABLE-IREF>
                                             </ACCESSED-VARIABLE>
                                         </VARIABLE-ACCESS>
-                                        <VARIABLE-ACCESS UUID="6a398d7e-e89c-5533-4d27-83d10cf66e64">
+                                        <VARIABLE-ACCESS UUID="88830d12-be62-54e1-fcfd-7c099d2c9a31">
                                             <SHORT-NAME>OUT_VeOUT_ADLK_FLDoorMotorCmd_sig_VeOUT_ADLK_FLDoorMotorCmd_sig</SHORT-NAME>
                                             <ACCESSED-VARIABLE>
                                                 <AUTOSAR-VARIABLE-IREF>
@@ -538,7 +538,7 @@ Model Checksum               : 2887582198 88992831 3819282842 907949154
                                                 </AUTOSAR-VARIABLE-IREF>
                                             </ACCESSED-VARIABLE>
                                         </VARIABLE-ACCESS>
-                                        <VARIABLE-ACCESS UUID="9127d1f2-909a-5cd1-33c4-ccf28ad2cda6">
+                                        <VARIABLE-ACCESS UUID="d275b303-1d05-5073-fe7d-ac54b2856110">
                                             <SHORT-NAME>OUT_VeOUT_ADLK_RLDoorMotorCmd_sig_VeOUT_ADLK_RLDoorMotorCmd_sig</SHORT-NAME>
                                             <ACCESSED-VARIABLE>
                                                 <AUTOSAR-VARIABLE-IREF>
@@ -547,7 +547,7 @@ Model Checksum               : 2887582198 88992831 3819282842 907949154
                                                 </AUTOSAR-VARIABLE-IREF>
                                             </ACCESSED-VARIABLE>
                                         </VARIABLE-ACCESS>
-                                        <VARIABLE-ACCESS UUID="6b8e3c4c-5efa-595f-aacd-2f4f763c5c11">
+                                        <VARIABLE-ACCESS UUID="27d06bfa-5e69-5447-aa35-7f6d35828205">
                                             <SHORT-NAME>OUT_VeOUT_ADLK_FLDoorMotorPWM_pct_VeOUT_ADLK_FLDoorMotorPWM_pct</SHORT-NAME>
                                             <ACCESSED-VARIABLE>
                                                 <AUTOSAR-VARIABLE-IREF>
@@ -556,7 +556,7 @@ Model Checksum               : 2887582198 88992831 3819282842 907949154
                                                 </AUTOSAR-VARIABLE-IREF>
                                             </ACCESSED-VARIABLE>
                                         </VARIABLE-ACCESS>
-                                        <VARIABLE-ACCESS UUID="9d7b132f-a568-5594-2d46-af13da34e81e">
+                                        <VARIABLE-ACCESS UUID="7fa65f3d-3089-5a35-b0f4-7ec8be0c832b">
                                             <SHORT-NAME>OUT_VeOUT_ADLK_RLDoorMotorPWM_pct_VeOUT_ADLK_RLDoorMotorPWM_pct</SHORT-NAME>
                                             <ACCESSED-VARIABLE>
                                                 <AUTOSAR-VARIABLE-IREF>
@@ -573,7 +573,7 @@ Model Checksum               : 2887582198 88992831 3819282842 907949154
                                     <MINIMUM-START-INTERVAL>0</MINIMUM-START-INTERVAL>
                                     <CAN-BE-INVOKED-CONCURRENTLY>false</CAN-BE-INVOKED-CONCURRENTLY>
                                     <DATA-RECEIVE-POINT-BY-ARGUMENTS>
-                                        <VARIABLE-ACCESS UUID="9de87177-53b7-5838-ba8c-de1be0147a31">
+                                        <VARIABLE-ACCESS UUID="02a58239-fc9e-549a-e008-59e21de040f4">
                                             <SHORT-NAME>IN_VbOUT_DLK_FLLock_flg_VbOUT_DLK_FLLock_flg</SHORT-NAME>
                                             <ACCESSED-VARIABLE>
                                                 <AUTOSAR-VARIABLE-IREF>
@@ -582,7 +582,7 @@ Model Checksum               : 2887582198 88992831 3819282842 907949154
                                                 </AUTOSAR-VARIABLE-IREF>
                                             </ACCESSED-VARIABLE>
                                         </VARIABLE-ACCESS>
-                                        <VARIABLE-ACCESS UUID="21fd43ff-258b-5701-a0e6-1ad995fed9ea">
+                                        <VARIABLE-ACCESS UUID="4d300dd1-49c6-56a4-b3fc-a8552c6d2743">
                                             <SHORT-NAME>IN_VbOUT_DLK_FLUnlock_flg_VbOUT_DLK_FLUnlock_flg</SHORT-NAME>
                                             <ACCESSED-VARIABLE>
                                                 <AUTOSAR-VARIABLE-IREF>
@@ -591,7 +591,7 @@ Model Checksum               : 2887582198 88992831 3819282842 907949154
                                                 </AUTOSAR-VARIABLE-IREF>
                                             </ACCESSED-VARIABLE>
                                         </VARIABLE-ACCESS>
-                                        <VARIABLE-ACCESS UUID="8b49affb-f7e3-5352-2643-e320d02e5636">
+                                        <VARIABLE-ACCESS UUID="43d7d2e7-c57b-5ccc-6328-affb79a49088">
                                             <SHORT-NAME>IN_VbOUT_DLK_RLLock_flg_VbOUT_DLK_RLLock_flg</SHORT-NAME>
                                             <ACCESSED-VARIABLE>
                                                 <AUTOSAR-VARIABLE-IREF>
@@ -600,7 +600,7 @@ Model Checksum               : 2887582198 88992831 3819282842 907949154
                                                 </AUTOSAR-VARIABLE-IREF>
                                             </ACCESSED-VARIABLE>
                                         </VARIABLE-ACCESS>
-                                        <VARIABLE-ACCESS UUID="2f681b0d-343a-5c59-f62a-c377214b85d7">
+                                        <VARIABLE-ACCESS UUID="8fb45754-b025-5102-c5c3-0731f627df92">
                                             <SHORT-NAME>IN_VbOUT_DLK_RLUnlock_flg_VbOUT_DLK_RLUnlock_flg</SHORT-NAME>
                                             <ACCESSED-VARIABLE>
                                                 <AUTOSAR-VARIABLE-IREF>
@@ -609,7 +609,7 @@ Model Checksum               : 2887582198 88992831 3819282842 907949154
                                                 </AUTOSAR-VARIABLE-IREF>
                                             </ACCESSED-VARIABLE>
                                         </VARIABLE-ACCESS>
-                                        <VARIABLE-ACCESS UUID="66113cb3-90b8-56d1-80a8-865854b5e16f">
+                                        <VARIABLE-ACCESS UUID="9a416a12-6e1e-5b9f-4e31-c5573152b1c8">
                                             <SHORT-NAME>IN_VbOUT_HWA_FLDoorFullOpen_flg_VbOUT_HWA_FLDoorFullOpen_flg</SHORT-NAME>
                                             <ACCESSED-VARIABLE>
                                                 <AUTOSAR-VARIABLE-IREF>
@@ -618,7 +618,7 @@ Model Checksum               : 2887582198 88992831 3819282842 907949154
                                                 </AUTOSAR-VARIABLE-IREF>
                                             </ACCESSED-VARIABLE>
                                         </VARIABLE-ACCESS>
-                                        <VARIABLE-ACCESS UUID="9b1b9c1e-ea12-5878-2c65-86b593857e4f">
+                                        <VARIABLE-ACCESS UUID="3744a98e-7cbe-55ee-f42e-038c04a81195">
                                             <SHORT-NAME>IN_VbOUT_HWA_RLDoorFullOpen_flg_VbOUT_HWA_RLDoorFullOpen_flg</SHORT-NAME>
                                             <ACCESSED-VARIABLE>
                                                 <AUTOSAR-VARIABLE-IREF>
@@ -627,7 +627,7 @@ Model Checksum               : 2887582198 88992831 3819282842 907949154
                                                 </AUTOSAR-VARIABLE-IREF>
                                             </ACCESSED-VARIABLE>
                                         </VARIABLE-ACCESS>
-                                        <VARIABLE-ACCESS UUID="59ca2cbd-5154-598a-2f64-e7dd7f7012a9">
+                                        <VARIABLE-ACCESS UUID="939d9695-850e-5e59-abfa-e9981277f693">
                                             <SHORT-NAME>IN_VbOUT_REL_FLDoorRlsReq_flg_VbOUT_REL_FLDoorRlsReq_flg</SHORT-NAME>
                                             <ACCESSED-VARIABLE>
                                                 <AUTOSAR-VARIABLE-IREF>
@@ -636,7 +636,7 @@ Model Checksum               : 2887582198 88992831 3819282842 907949154
                                                 </AUTOSAR-VARIABLE-IREF>
                                             </ACCESSED-VARIABLE>
                                         </VARIABLE-ACCESS>
-                                        <VARIABLE-ACCESS UUID="e102ea83-437a-52fa-8d5f-1766a2332c0e">
+                                        <VARIABLE-ACCESS UUID="759357bc-bc05-550a-3fd9-58d847a45e71">
                                             <SHORT-NAME>IN_VbOUT_REL_RLDoorRlsReq_flg_VbOUT_REL_RLDoorRlsReq_flg</SHORT-NAME>
                                             <ACCESSED-VARIABLE>
                                                 <AUTOSAR-VARIABLE-IREF>
@@ -645,7 +645,7 @@ Model Checksum               : 2887582198 88992831 3819282842 907949154
                                                 </AUTOSAR-VARIABLE-IREF>
                                             </ACCESSED-VARIABLE>
                                         </VARIABLE-ACCESS>
-                                        <VARIABLE-ACCESS UUID="fd0fd06b-49ed-5fd1-9d79-99b5153cc1f6">
+                                        <VARIABLE-ACCESS UUID="f88285e0-8d92-517a-414f-9a57d85fd3a8">
                                             <SHORT-NAME>IN_VbOUT_SP_FLDoorAjarSts_flg_VbOUT_SP_FLDoorAjarSts_flg</SHORT-NAME>
                                             <ACCESSED-VARIABLE>
                                                 <AUTOSAR-VARIABLE-IREF>
@@ -654,7 +654,7 @@ Model Checksum               : 2887582198 88992831 3819282842 907949154
                                                 </AUTOSAR-VARIABLE-IREF>
                                             </ACCESSED-VARIABLE>
                                         </VARIABLE-ACCESS>
-                                        <VARIABLE-ACCESS UUID="8193ddba-ad8e-50d5-51c1-51d0cc374f94">
+                                        <VARIABLE-ACCESS UUID="947c61af-9ca3-545f-1cac-c1180951753d">
                                             <SHORT-NAME>IN_VbOUT_SP_RLDoorAjarSts_flg_VbOUT_SP_RLDoorAjarSts_flg</SHORT-NAME>
                                             <ACCESSED-VARIABLE>
                                                 <AUTOSAR-VARIABLE-IREF>
@@ -665,7 +665,7 @@ Model Checksum               : 2887582198 88992831 3819282842 907949154
                                         </VARIABLE-ACCESS>
                                     </DATA-RECEIVE-POINT-BY-ARGUMENTS>
                                     <DATA-SEND-POINTS>
-                                        <VARIABLE-ACCESS UUID="7a7274fd-ce4f-5ea3-4680-f7900dacc10e">
+                                        <VARIABLE-ACCESS UUID="d5d6808b-b1a4-50f6-361a-b1e7d2faaa64">
                                             <SHORT-NAME>OUT_VeOUT_ADLK_FLLockReq_sig_VeOUT_ADLK_FLLockReq_sig</SHORT-NAME>
                                             <ACCESSED-VARIABLE>
                                                 <AUTOSAR-VARIABLE-IREF>
@@ -674,7 +674,7 @@ Model Checksum               : 2887582198 88992831 3819282842 907949154
                                                 </AUTOSAR-VARIABLE-IREF>
                                             </ACCESSED-VARIABLE>
                                         </VARIABLE-ACCESS>
-                                        <VARIABLE-ACCESS UUID="a6e8aa76-dccf-57af-cc70-7d7bd86a43a7">
+                                        <VARIABLE-ACCESS UUID="20714d76-cf12-5698-62bd-d522966cb547">
                                             <SHORT-NAME>OUT_VeOUT_ADLK_RLLockReq_sig_VeOUT_ADLK_RLLockReq_sig</SHORT-NAME>
                                             <ACCESSED-VARIABLE>
                                                 <AUTOSAR-VARIABLE-IREF>
@@ -683,7 +683,7 @@ Model Checksum               : 2887582198 88992831 3819282842 907949154
                                                 </AUTOSAR-VARIABLE-IREF>
                                             </ACCESSED-VARIABLE>
                                         </VARIABLE-ACCESS>
-                                        <VARIABLE-ACCESS UUID="bd6b05fa-e1ce-5518-4816-a1556b01e427">
+                                        <VARIABLE-ACCESS UUID="02c84bc4-401c-57d2-8c5e-864b12ed850b">
                                             <SHORT-NAME>OUT_VeOUT_ADLK_FLReleaseLatchStatus_sig_VeOUT_ADLK_FLReleaseLatchStatus_sig</SHORT-NAME>
                                             <ACCESSED-VARIABLE>
                                                 <AUTOSAR-VARIABLE-IREF>
@@ -692,7 +692,7 @@ Model Checksum               : 2887582198 88992831 3819282842 907949154
                                                 </AUTOSAR-VARIABLE-IREF>
                                             </ACCESSED-VARIABLE>
                                         </VARIABLE-ACCESS>
-                                        <VARIABLE-ACCESS UUID="002a207f-c7d8-5f47-a525-73f7a541294d">
+                                        <VARIABLE-ACCESS UUID="864abe1e-15ee-564b-63aa-e6862f7e9766">
                                             <SHORT-NAME>OUT_VeOUT_ADLK_RLReleaseLatchStatus_sig_VeOUT_ADLK_RLReleaseLatchStatus_sig</SHORT-NAME>
                                             <ACCESSED-VARIABLE>
                                                 <AUTOSAR-VARIABLE-IREF>
@@ -701,7 +701,7 @@ Model Checksum               : 2887582198 88992831 3819282842 907949154
                                                 </AUTOSAR-VARIABLE-IREF>
                                             </ACCESSED-VARIABLE>
                                         </VARIABLE-ACCESS>
-                                        <VARIABLE-ACCESS UUID="d1716795-14f2-5cb8-e964-c46d2ce8c7df">
+                                        <VARIABLE-ACCESS UUID="7072f06f-3bf9-55e3-909f-64ee2bcf1407">
                                             <SHORT-NAME>OUT_VeOUT_ADLK_FLDoorMotorCmd_sig_VeOUT_ADLK_FLDoorMotorCmd_sig</SHORT-NAME>
                                             <ACCESSED-VARIABLE>
                                                 <AUTOSAR-VARIABLE-IREF>
@@ -710,7 +710,7 @@ Model Checksum               : 2887582198 88992831 3819282842 907949154
                                                 </AUTOSAR-VARIABLE-IREF>
                                             </ACCESSED-VARIABLE>
                                         </VARIABLE-ACCESS>
-                                        <VARIABLE-ACCESS UUID="29f76932-1192-5d52-1f75-42f89debce06">
+                                        <VARIABLE-ACCESS UUID="b8037230-2440-5522-a72b-39c793efbb95">
                                             <SHORT-NAME>OUT_VeOUT_ADLK_RLDoorMotorCmd_sig_VeOUT_ADLK_RLDoorMotorCmd_sig</SHORT-NAME>
                                             <ACCESSED-VARIABLE>
                                                 <AUTOSAR-VARIABLE-IREF>
@@ -719,7 +719,7 @@ Model Checksum               : 2887582198 88992831 3819282842 907949154
                                                 </AUTOSAR-VARIABLE-IREF>
                                             </ACCESSED-VARIABLE>
                                         </VARIABLE-ACCESS>
-                                        <VARIABLE-ACCESS UUID="7e6fe580-80fe-5b11-76fb-fb0adf7b88b4">
+                                        <VARIABLE-ACCESS UUID="4fac2d83-c86e-5ade-b94a-ccb33565cc8a">
                                             <SHORT-NAME>OUT_VeOUT_ADLK_FLDoorMotorPWM_pct_VeOUT_ADLK_FLDoorMotorPWM_pct</SHORT-NAME>
                                             <ACCESSED-VARIABLE>
                                                 <AUTOSAR-VARIABLE-IREF>
@@ -728,7 +728,7 @@ Model Checksum               : 2887582198 88992831 3819282842 907949154
                                                 </AUTOSAR-VARIABLE-IREF>
                                             </ACCESSED-VARIABLE>
                                         </VARIABLE-ACCESS>
-                                        <VARIABLE-ACCESS UUID="bb842b1c-336a-5000-409a-ae4a7d9e942c">
+                                        <VARIABLE-ACCESS UUID="014eff57-2f1f-54f6-dd3e-ad409ff1574d">
                                             <SHORT-NAME>OUT_VeOUT_ADLK_RLDoorMotorPWM_pct_VeOUT_ADLK_RLDoorMotorPWM_pct</SHORT-NAME>
                                             <ACCESSED-VARIABLE>
                                                 <AUTOSAR-VARIABLE-IREF>
@@ -1127,7 +1127,7 @@ Model Checksum               : 2887582198 88992831 3819282842 907949154
                             <SHORT-NAME>rt_Array_UInt8_8</SHORT-NAME>
                             <CATEGORY>ARRAY</CATEGORY>
                             <SUB-ELEMENTS>
-                                <IMPLEMENTATION-DATA-TYPE-ELEMENT UUID="f580810e-352c-54e9-3fe7-7ecff004bcd5">
+                                <IMPLEMENTATION-DATA-TYPE-ELEMENT UUID="94f55ef8-fc85-5adf-4810-5cc9dd43a1d7">
                                     <SHORT-NAME>rt_Array_UInt8_8</SHORT-NAME>
                                     <CATEGORY>TYPE_REFERENCE</CATEGORY>
                                     <ARRAY-SIZE>8</ARRAY-SIZE>
